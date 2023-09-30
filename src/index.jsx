@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import SchemeColor from './components/SchemeColor';
 import './style.css';
 
 // const palettes = [
@@ -118,6 +119,9 @@ const palettes = [
   },
 ];
 
+const colors = palettes[0].colors
+console.log(colors)
+
 const App = () => {
   return (
     <div className="container">
@@ -129,11 +133,13 @@ const App = () => {
           <div className="palette-scheme palette-scheme--vertical">
             <img className="scheme-image" src="/img/mimosa-retreat.jpg" alt="Mimosa Retreat" />
             <div className="scheme-colors">
-              <div className="scheme-color" style={{ backgroundColor: '#583e26' }} >#583e26</div>
-              <div className="scheme-color" style={{ backgroundColor: '#a78b71' }} >#a78b71</div>
-              <div className="scheme-color" style={{ backgroundColor: '#f7c815' }} >#f7c815</div>
-              <div className="scheme-color" style={{ backgroundColor: '#ec9704' }} >#ec9704</div>
-              <div className="scheme-color" style={{ backgroundColor: '#9c4a1a' }} >#9c4a1a</div>
+              {
+                colors.map((color) => (
+                  <>
+                  <SchemeColor key="#583e26" color="#583e26" />
+                  </>
+                ))
+              }
             </div>
           </div>
           <div className="palette-info">
